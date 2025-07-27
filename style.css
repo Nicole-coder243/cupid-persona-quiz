@@ -1,0 +1,140 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ffe4e6;
+    color: #4a2b2b;
+    font-family: 'poppins',sans-serif;
+}
+h1{
+    margin: 12px;
+}
+h2{
+    font-family:'Great Vibes',cursive;
+    font-size:1.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem
+}
+#heart-container{
+    position:fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index:1;
+}
+.heart{
+    position: absolute;
+    animation: floatDown 5s linear;
+    font-size: 3rem;
+    transform:translateX(-50%);
+    opacity:0;
+}
+button{
+    margin:50px;
+    padding: 30px;
+    border: none;
+    background: pink;
+    border-radius: 4px;
+   transition : background 0.5s ease-in-out;
+   cursor: pointer;
+}
+
+button:hover{
+    transform: scale(1.2);
+    background:#4a2b2b;
+    color: #e991be;
+}
+
+img{
+    margin:25px;
+    width: 190px;
+    height:auto;
+    animation: floating 2s ease-in-out infinite;
+}
+.hidden{
+    display: none;
+}
+#quiz-container{
+display:  flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 10px;
+}
+#question-image img {
+  animation: floating 2s ease-in-out infinite;
+  width: 250px;  /* adjust size as needed */
+  height: 400px;
+  
+}
+.selection-button {
+  display: block;
+  margin: 10px auto;
+  width: 80%;
+  cursor:pointer;
+}
+
+.question-fade {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.question-show {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+#results {
+  position: relative;
+  margin: 10px auto;
+  top: -50vh; 
+  width: fit-content;
+  max-width: 90%;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #4a2b2b;
+  background-color: #ffe4e6;
+  padding: 20px;
+  border-radius: 24px;
+  box-shadow: 4px 8px 20px rgba(0,0,0,0.1);
+  
+}
+#results h2{
+    font-family: sans-serif;
+}
+@keyframes floatDown{
+    0%{
+        top:-10%;
+        opacity: 0;
+    }
+    20%{
+        opacity:1;
+    }
+
+    80%{
+        opacity: 1;
+    }
+    100%{
+        top:100%;
+        opacity:0;
+    }
+}
+@keyframes floating {
+    0%{
+        transform: translateY(1px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform:translateY(1px);
+    }
+}
